@@ -14,6 +14,7 @@
 		0FBFF2A5249D347F00C52F20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFF2A4249D347F00C52F20 /* HomeViewController.swift */; };
 		0FBFF2A7249D349700C52F20 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFF2A6249D349700C52F20 /* SearchViewController.swift */; };
 		0FBFF2AD249D35A700C52F20 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFF2AC249D35A700C52F20 /* ShoppingListViewController.swift */; };
+		A12744D224A0A801009BA038 /* AdvertisementItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12744D124A0A801009BA038 /* AdvertisementItemVC.swift */; };
 		A12BE65324A08BD40043C100 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65024A08BD40043C100 /* DataProvider.swift */; };
 		A12BE65424A08BD40043C100 /* Merchandise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65124A08BD40043C100 /* Merchandise.swift */; };
 		A12BE65524A08BD40043C100 /* MerchandiseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */; };
@@ -31,6 +32,7 @@
 		0FBFF2A4249D347F00C52F20 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0FBFF2A6249D349700C52F20 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0FBFF2AC249D35A700C52F20 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		A12744D124A0A801009BA038 /* AdvertisementItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementItemVC.swift; sourceTree = "<group>"; };
 		A12BE65024A08BD40043C100 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		A12BE65124A08BD40043C100 /* Merchandise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merchandise.swift; sourceTree = "<group>"; };
 		A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchandiseCategory.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				0FBFF2A4249D347F00C52F20 /* HomeViewController.swift */,
 				A12BE65724A096FD0043C100 /* MerchandiseVC.swift */,
 				A12BE65924A097420043C100 /* AdvertisementVC.swift */,
+				A12744D124A0A801009BA038 /* AdvertisementItemVC.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				A12BE65324A08BD40043C100 /* DataProvider.swift in Sources */,
 				0FBFF28F249D338500C52F20 /* AppDelegate.swift in Sources */,
+				A12744D224A0A801009BA038 /* AdvertisementItemVC.swift in Sources */,
 				0FBFF2A3249D344D00C52F20 /* MainTabBarController.swift in Sources */,
 				A12BE65824A096FD0043C100 /* MerchandiseVC.swift in Sources */,
 				0FBFF2AD249D35A700C52F20 /* ShoppingListViewController.swift in Sources */,
