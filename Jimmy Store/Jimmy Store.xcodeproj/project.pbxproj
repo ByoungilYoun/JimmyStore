@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F06110624A0A07E00E43C8F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F06110524A0A07E00E43C8F /* CustomCell.swift */; };
+		0F06110824A0D5B000E43C8F /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F06110724A0D5B000E43C8F /* SectionHeaderView.swift */; };
 		0FBFF28F249D338500C52F20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFF28E249D338500C52F20 /* AppDelegate.swift */; };
 		0FBFF298249D338500C52F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBFF297249D338500C52F20 /* Assets.xcassets */; };
 		0FBFF29B249D338500C52F20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBFF299249D338500C52F20 /* LaunchScreen.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F06110524A0A07E00E43C8F /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		0F06110724A0D5B000E43C8F /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		0FBFF28B249D338500C52F20 /* Jimmy Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jimmy Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBFF28E249D338500C52F20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FBFF297249D338500C52F20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		0FBFF2AA249D354000C52F20 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F06110524A0A07E00E43C8F /* CustomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			children = (
 				0FBFF2A4249D347F00C52F20 /* HomeViewController.swift */,
 				A12BE65724A096FD0043C100 /* MerchandiseVC.swift */,
+				0F06110724A0D5B000E43C8F /* SectionHeaderView.swift */,
 				A12BE65924A097420043C100 /* AdvertisementVC.swift */,
 			);
 			path = HomeVC;
@@ -197,10 +203,12 @@
 			files = (
 				A12BE65324A08BD40043C100 /* DataProvider.swift in Sources */,
 				0FBFF28F249D338500C52F20 /* AppDelegate.swift in Sources */,
+				0F06110624A0A07E00E43C8F /* CustomCell.swift in Sources */,
 				0FBFF2A3249D344D00C52F20 /* MainTabBarController.swift in Sources */,
 				A12BE65824A096FD0043C100 /* MerchandiseVC.swift in Sources */,
 				0FBFF2AD249D35A700C52F20 /* ShoppingListViewController.swift in Sources */,
 				A12BE65424A08BD40043C100 /* Merchandise.swift in Sources */,
+				0F06110824A0D5B000E43C8F /* SectionHeaderView.swift in Sources */,
 				A12BE65524A08BD40043C100 /* MerchandiseCategory.swift in Sources */,
 				0FBFF2A7249D349700C52F20 /* SearchViewController.swift in Sources */,
 				A12BE65A24A097420043C100 /* AdvertisementVC.swift in Sources */,
