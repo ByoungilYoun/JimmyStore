@@ -13,7 +13,7 @@ class MainTabBarController : UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tabBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    tabBar.barTintColor = UIColor(red: 22 / 255, green: 22 / 255, blue: 22 / 255, alpha: 1.0)
     
     let homeVC = HomeViewController()
     homeVC.tabBarItem = UITabBarItem(title: "쇼핑하기", image: UIImage(systemName: "tv"), tag: 0)
