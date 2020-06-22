@@ -15,6 +15,9 @@
 		0FBFF2A5249D347F00C52F20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFF2A4249D347F00C52F20 /* HomeViewController.swift */; };
 		0FBFF2A7249D349700C52F20 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFF2A6249D349700C52F20 /* SearchViewController.swift */; };
 		0FBFF2AD249D35A700C52F20 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFF2AC249D35A700C52F20 /* ShoppingListViewController.swift */; };
+		A12BE65324A08BD40043C100 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65024A08BD40043C100 /* DataProvider.swift */; };
+		A12BE65424A08BD40043C100 /* Merchandise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65124A08BD40043C100 /* Merchandise.swift */; };
+		A12BE65524A08BD40043C100 /* MerchandiseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		0FBFF2A4249D347F00C52F20 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0FBFF2A6249D349700C52F20 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0FBFF2AC249D35A700C52F20 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		A12BE65024A08BD40043C100 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		A12BE65124A08BD40043C100 /* Merchandise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merchandise.swift; sourceTree = "<group>"; };
+		A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchandiseCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		0FBFF28D249D338500C52F20 /* Jimmy Store */ = {
 			isa = PBXGroup;
 			children = (
+				A12BE64F24A08B5A0043C100 /* Datas */,
 				0FBFF28E249D338500C52F20 /* AppDelegate.swift */,
 				0FBFF2AB249D354C00C52F20 /* Model */,
 				0FBFF2AA249D354000C52F20 /* View */,
@@ -95,6 +102,16 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A12BE64F24A08B5A0043C100 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				A12BE65024A08BD40043C100 /* DataProvider.swift */,
+				A12BE65124A08BD40043C100 /* Merchandise.swift */,
+				A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */,
+			);
+			path = Datas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12BE65324A08BD40043C100 /* DataProvider.swift in Sources */,
 				0FBFF28F249D338500C52F20 /* AppDelegate.swift in Sources */,
 				0FBFF2A3249D344D00C52F20 /* MainTabBarController.swift in Sources */,
 				0FBFF2AD249D35A700C52F20 /* ShoppingListViewController.swift in Sources */,
+				A12BE65424A08BD40043C100 /* Merchandise.swift in Sources */,
+				A12BE65524A08BD40043C100 /* MerchandiseCategory.swift in Sources */,
 				0FBFF2A7249D349700C52F20 /* SearchViewController.swift in Sources */,
 				0FBFF2A5249D347F00C52F20 /* HomeViewController.swift in Sources */,
 			);
@@ -317,7 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				DEVELOPMENT_TEAM = S6DQ9A36X5;
 				INFOPLIST_FILE = "Jimmy Store/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,7 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				DEVELOPMENT_TEAM = S6DQ9A36X5;
 				INFOPLIST_FILE = "Jimmy Store/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
