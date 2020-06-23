@@ -20,15 +20,21 @@ class HomeViewController : UIViewController {
         self.setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
     // MARK:- UI
     private func setUI() {
-        
         let guide = super.view.safeAreaLayoutGuide
         
         if let adv = self.advertisementVC.view,
             let merchandise = self.merchandiseVC.view {
             
+            super.addChild(self.advertisementVC)
             super.view.addSubview(adv)
+            self.advertisementVC.didMove(toParent: self)
             adv.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 adv.topAnchor.constraint(equalTo: guide.topAnchor),
@@ -37,7 +43,9 @@ class HomeViewController : UIViewController {
                 adv.heightAnchor.constraint(equalToConstant: 230),
             ])
             
+            super.addChild(self.merchandiseVC)
             super.view.addSubview(merchandise)
+            self.merchandiseVC.didMove(toParent: self)
             merchandise.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 merchandise.topAnchor.constraint(equalTo: adv.bottomAnchor),
@@ -47,4 +55,6 @@ class HomeViewController : UIViewController {
             ])
         }
     }
+    
+    
 }

@@ -13,7 +13,7 @@ final class CustomCell : UICollectionViewCell {
     
     private let imageView = UIImageView()
     private let nameLabel = UILabel()
-    
+    private let priceLabel = UILabel()
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -28,19 +28,26 @@ final class CustomCell : UICollectionViewCell {
     
     private func setUpViews() {
         clipsToBounds = true // 겹치지 않게
-        layer.cornerRadius = 20
+        layer.cornerRadius = 5
         
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         contentView.addSubview(imageView)
         
-        nameLabel.textAlignment = .center
+        nameLabel.textAlignment = .left
         nameLabel.textColor = .white
-        nameLabel.font = .preferredFont(forTextStyle: .title2)
-        imageView.addSubview(nameLabel)
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        nameLabel.sizeToFit()
+        nameLabel.numberOfLines = 0
+        contentView.addSubview(nameLabel)
+        
+        priceLabel.textAlignment = .left
+        priceLabel.textColor = .white
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        contentView.addSubview(priceLabel)
     }
     
     private func setUpConstraints() {
-        [imageView, nameLabel].forEach {
+        [imageView, nameLabel, priceLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -48,17 +55,41 @@ final class CustomCell : UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 50),
+//            imageView.widthAnchor.constraint(equalToConstant: 50),
+//            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10),
             
-            nameLabel.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
-            nameLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
-            nameLabel.heightAnchor.constraint(equalToConstant: 30)
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+//            nameLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+//            nameLabel.bottomAnchor.constraint(equalTo: imageView.topAnchor, constant: 20),
+//            nameLabel.heightAnchor.constraint(equalToConstant: 30),
+//
+            priceLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+//            priceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+//            priceLabel.heightAnchor.constraint(equalToConstant: 30)
+//            priceLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor)
         ])
     }
     
-    func configure(image : UIImage? ) {
+    func configure(image : UIImage?, title : String, price : Int ) {
+        let commaPrice = limitDigits(to: price)
+        
         imageView.image = image
-     //   nameLabel.text = title
+        nameLabel.text = title
+        priceLabel.text = commaPrice + "원"
+    }
+    
+    func limitDigits (to numString : Int) -> String {
+        let number = numString
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: number as NSNumber) ?? "0"
+    
+        
     }
 }
