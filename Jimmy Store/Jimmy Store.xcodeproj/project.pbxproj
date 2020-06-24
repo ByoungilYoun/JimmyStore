@@ -91,10 +91,10 @@
 		0FBFF2A8249D34A800C52F20 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A14E222724A3514400608ABF /* SearchVC */,
 				0FBFF2A2249D344D00C52F20 /* MainTabBarController.swift */,
 				A12BE65624A096CA0043C100 /* HomeVC */,
 				0FC7528D24A2238B00A01D6E /* DetailViewController.swift */,
-				0FBFF2A6249D349700C52F20 /* SearchViewController.swift */,
 				0FBFF2AC249D35A700C52F20 /* ShoppingListViewController.swift */,
 			);
 			path = Controller;
@@ -135,6 +135,14 @@
 				A12744D124A0A801009BA038 /* AdvertisementItemVC.swift */,
 			);
 			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		A14E222724A3514400608ABF /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				0FBFF2A6249D349700C52F20 /* SearchViewController.swift */,
+			);
+			path = SearchVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
