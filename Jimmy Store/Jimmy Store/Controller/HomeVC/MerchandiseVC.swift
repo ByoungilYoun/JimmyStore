@@ -65,11 +65,13 @@ final class MerchandiseVC: UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+        let data = datas[indexPath.section].merchandises[indexPath.item]
         let detailVC = DetailViewController()
     
-        detailVC.productName = datas[indexPath.item].name
-        print ("didSelectItemAt",indexPath.item)
+        detailVC.productName = datas[indexPath.section].name
+        detailVC.titleName = data.name
+        detailVC.price = String(data.price)
+        detailVC.descriptions = data.description
         super.parent?.navigationController?.pushViewController(detailVC, animated: true)
     }
     
