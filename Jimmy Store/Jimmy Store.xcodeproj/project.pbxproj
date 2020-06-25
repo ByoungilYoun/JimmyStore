@@ -133,11 +133,21 @@
 			children = (
 				0FBFF2A4249D347F00C52F20 /* HomeViewController.swift */,
 				A12BE65724A096FD0043C100 /* MerchandiseVC.swift */,
+				0FC7528D24A2238B00A01D6E /* DetailViewController.swift */,
 				0F06110724A0D5B000E43C8F /* SectionHeaderView.swift */,
 				A12BE65924A097420043C100 /* AdvertisementVC.swift */,
 				A12744D124A0A801009BA038 /* AdvertisementItemVC.swift */,
+				A14E222724A3514400608ABF /* SearchVC */,
 			);
 			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		A14E222724A3514400608ABF /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				0FBFF2A6249D349700C52F20 /* SearchViewController.swift */,
+			);
+			path = SearchVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -27,6 +27,22 @@ class MainTabBarController : UITabBarController {
     listNaviVC.tabBarItem = UITabBarItem(title: "장바구니", image: UIImage(systemName: "bag"), tag: 0)
     
     viewControllers = [homeVC, searchVC, listNaviVC]
+    searchVC.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass") , tag: 1)
     
+    let emptyVC = UIViewController()
+    emptyVC.tabBarItem = UITabBarItem(title: "장바구니", image: UIImage(systemName: "bag"), tag: 2)
+    
+    viewControllers = [homeVC, searchVC, emptyVC]
   }
+}
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if tabBarController.viewControllers?.firstIndex(of: viewController) == 2 {
+            super.navigationController?.pushViewController(ShoppingListViewController(), animated: true)
+            return false
+        }
+        
+        return true
+    }
 }
