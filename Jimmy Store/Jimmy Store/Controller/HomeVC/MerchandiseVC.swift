@@ -71,7 +71,7 @@ final class MerchandiseVC: UICollectionViewController, UICollectionViewDelegateF
         detailVC.productName = datas[indexPath.section].name
         detailVC.titleName = data.name
         detailVC.price = String(data.price)
-        detailVC.descriptions = data.description
+        detailVC.descriptions = data.description1
         super.parent?.navigationController?.pushViewController(detailVC, animated: true)
     }
     

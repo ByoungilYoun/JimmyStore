@@ -25,6 +25,30 @@ final class DetailViewController : UIViewController {
     private let containerView = UIView()
     private let bucketButton = UIButton()
     private let orderButton = UIButton()
+    
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience init(categoryName: String, productName: String, price: Int, descriptions: String) {
+        self.init()
+        
+        self.productName = categoryName
+        self.titleName = productName
+        self.price = String(price)
+        self.descriptions = descriptions
+    }
+    
+    convenience init(categoryName: String, merchandise: Merchandise) {
+        self.init(categoryName: categoryName,
+                  productName: merchandise.name,
+                  price: merchandise.price,
+                  descriptions: merchandise.description1)
+    }
+    
+    required init?(coder: NSCoder) { fatalError() }
+    
 //MARK: - viewDidLoad()
     
     override func viewDidLoad() {

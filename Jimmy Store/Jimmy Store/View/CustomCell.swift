@@ -84,4 +84,9 @@ final class CustomCell : UICollectionViewCell {
     
         
     }
+    
+    
+    class func dequeueCell(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> CustomCell {
+        collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
+    }
 }
