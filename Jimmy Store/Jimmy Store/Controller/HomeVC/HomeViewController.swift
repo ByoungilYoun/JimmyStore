@@ -22,7 +22,7 @@ class HomeViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
 //        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.barStyle = .black
+//        navigationController?.navigationBar.barStyle = .black
     }
     
     // MARK:- UI
