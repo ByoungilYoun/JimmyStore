@@ -76,6 +76,7 @@ extension ShoppingListViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell : UITableViewCell
         
         if let reusableCell = tableView.dequeueReusableCell(withIdentifier: "cell") {

@@ -14,6 +14,9 @@ class MainTabBarController : UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    super.view.backgroundColor = .white
+    super.delegate = self
+
     tabBar.barTintColor = UIColor(red: 22 / 255, green: 22 / 255, blue: 22 / 255, alpha: 1.0)
     
     let homeVC = HomeViewController()

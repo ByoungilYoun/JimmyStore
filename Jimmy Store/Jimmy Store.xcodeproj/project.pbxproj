@@ -24,6 +24,7 @@
 		A12BE65524A08BD40043C100 /* MerchandiseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */; };
 		A12BE65824A096FD0043C100 /* MerchandiseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65724A096FD0043C100 /* MerchandiseVC.swift */; };
 		A12BE65A24A097420043C100 /* AdvertisementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65924A097420043C100 /* AdvertisementVC.swift */; };
+		A16A8C9724A4C2FF003FF0DD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A8C9624A4C2FF003FF0DD /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchandiseCategory.swift; sourceTree = "<group>"; };
 		A12BE65724A096FD0043C100 /* MerchandiseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseVC.swift; sourceTree = "<group>"; };
 		A12BE65924A097420043C100 /* AdvertisementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementVC.swift; sourceTree = "<group>"; };
+		A16A8C9624A4C2FF003FF0DD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
