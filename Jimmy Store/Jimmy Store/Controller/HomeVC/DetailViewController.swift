@@ -10,12 +10,15 @@ import UIKit
 
 final class DetailViewController : UIViewController {
     
+    
 //MARK: - Properties
     var productName = ""
     var titleName = ""
     var price = ""
     var descriptions = "" 
     private var datas = DataProvider.getMerchandises()
+    private var shared = Singleton.shared
+   
     
     
     private let imageView = UIImageView()
@@ -145,7 +148,9 @@ final class DetailViewController : UIViewController {
         let cancelAlert = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(okAlert)
         alert.addAction(cancelAlert)
+        shared.shoppingList[productName] = titleLabel.text
         present(alert, animated: true)
+
     }
     
     private func orderAlertAction(){
