@@ -12,12 +12,11 @@ final class DetailViewController : UIViewController {
     
     
 //MARK: - Properties
-    private let shared = Singleton.shared
-    
     var productName = ""
     var titleName = ""
     var price = ""
-    var descriptions = "" 
+    var descriptions = ""
+    var data: Merchandise!
     private var datas = DataProvider.getMerchandises()
    
     
@@ -35,20 +34,15 @@ final class DetailViewController : UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    convenience init(categoryName: String, productName: String, price: Int, descriptions: String) {
+    convenience init(merchandise: Merchandise) {
         self.init()
         
-        self.productName = categoryName
-        self.titleName = productName
-        self.price = String(price)
-        self.descriptions = descriptions
-    }
-    
-    convenience init(categoryName: String, merchandise: Merchandise) {
-        self.init(categoryName: categoryName,
-                  productName: merchandise.name,
-                  price: merchandise.price,
-                  descriptions: merchandise.description1)
+        self.productName = merchandise.categoryName
+        self.titleName = merchandise.name
+        self.price = String(merchandise.price)
+        self.descriptions = merchandise.description1
+        
+        self.data = merchandise
     }
     
     required init?(coder: NSCoder) { fatalError() }
@@ -71,7 +65,15 @@ final class DetailViewController : UIViewController {
     private func setUI() {
         view.backgroundColor = .black
         
-        imageView.image = UIImage(systemName: "xmark")
+        var img: UIImage?
+        
+        if data.imageName.isEmpty {
+            img = UIImage(systemName: "xmark")
+        } else {
+            img = UIImage(named: data.imageName)
+        }
+        
+        imageView.image = img
         imageView.contentMode = .scaleToFill
         view.addSubview(imageView)
         
@@ -173,7 +175,8 @@ final class DetailViewController : UIViewController {
         let cancelAlert = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(okAlert)
         alert.addAction(cancelAlert)
-        shared.shoppingList[productName] = titleLabel.text
+        Singleton.shared.append(item: self.data)
+        
         present(alert, animated: true)
 
     }

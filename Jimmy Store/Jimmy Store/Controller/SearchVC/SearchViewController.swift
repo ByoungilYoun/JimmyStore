@@ -94,7 +94,15 @@ extension SearchViewController: UICollectionViewDataSource {
         let cell = CustomCell.dequeueCell(collectionView, indexPath)
         
         if let data = self.filteredDatas?[indexPath.section].merchandises[indexPath.row] {
-            cell.configure(image: UIImage(systemName: "xmark"), title: data.name, price: data.price)
+            var img: UIImage?
+            
+            if data.imageName.isEmpty {
+                img = UIImage(systemName: "xmark")
+            } else {
+                img = UIImage(named: data.imageName)
+            }
+            
+            cell.configure(image: img, title: data.name, price: data.price)
         }
 
         return cell
@@ -127,7 +135,7 @@ extension SearchViewController: UICollectionViewDelegate {
             let category = datas[indexPath.section]
             let merchandise = category.merchandises[indexPath.item]
             
-            let detailItemVC = DetailViewController(categoryName: category.name, merchandise: merchandise)
+            let detailItemVC = DetailViewController(merchandise: merchandise)
             super.parent?.navigationController?.pushViewController(detailItemVC, animated: true)
         }
     }

@@ -11,7 +11,29 @@ import Foundation
 final class Singleton {
     static let shared = Singleton()
     
-    private init() {}
+    private var shoppingList = [Merchandise]()
     
-    var shoppingList : [String : String] = [:]
+    var count: Int { self.shoppingList.count }
+    
+    
+    func append(item: Merchandise) {
+        if self.shoppingList.firstIndex(of: item) == nil {
+            self.shoppingList.append(item)
+        }
+    }
+    
+    func remove(item: Merchandise) {
+        if let idx = self.shoppingList.firstIndex(of: item) {
+            self.shoppingList.remove(at: idx)
+        }
+    }
+    
+    func getItem(idx: Int) -> Merchandise? {
+        
+        if idx < self.count {
+            return self.shoppingList[idx]
+        }
+        
+        return nil
+    }
 }
