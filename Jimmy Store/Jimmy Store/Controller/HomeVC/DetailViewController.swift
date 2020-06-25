@@ -12,12 +12,13 @@ final class DetailViewController : UIViewController {
     
     
 //MARK: - Properties
+    private let shared = Singleton.shared
+    
     var productName = ""
     var titleName = ""
     var price = ""
     var descriptions = "" 
     private var datas = DataProvider.getMerchandises()
-    private var shared = Singleton.shared
    
     
     

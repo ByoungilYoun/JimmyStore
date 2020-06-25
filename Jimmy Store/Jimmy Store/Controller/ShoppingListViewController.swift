@@ -10,7 +10,6 @@ import UIKit
 
 class ShoppingListViewController : UIViewController {
     
-    
     //MARK: - Properties
     private let shared = Singleton.shared
     
@@ -51,6 +50,7 @@ class ShoppingListViewController : UIViewController {
     }
     
     private func setUI() {
+        view.backgroundColor = .black
         tableView.dataSource = self
         tableView.rowHeight = 100
         view.addSubview(tableView)
