@@ -10,6 +10,7 @@ import UIKit
 
 final class DetailViewController : UIViewController {
     
+    
 //MARK: - Properties
     private let shared = Singleton.shared
     
@@ -18,6 +19,7 @@ final class DetailViewController : UIViewController {
     var price = ""
     var descriptions = "" 
     private var datas = DataProvider.getMerchandises()
+   
     
     
     private let imageView = UIImageView()
@@ -171,7 +173,9 @@ final class DetailViewController : UIViewController {
         let cancelAlert = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(okAlert)
         alert.addAction(cancelAlert)
+        shared.shoppingList[productName] = titleLabel.text
         present(alert, animated: true)
+
     }
     
     private func orderAlertAction(){

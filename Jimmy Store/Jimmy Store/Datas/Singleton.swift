@@ -2,7 +2,7 @@
 //  Singleton.swift
 //  Jimmy Store
 //
-//  Created by 윤병일 on 2020/06/24.
+//  Created by 윤병일 on 2020/06/25.
 //  Copyright © 2020 Byoungil Youn. All rights reserved.
 //
 

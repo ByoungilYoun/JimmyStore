@@ -13,12 +13,16 @@ class ShoppingListViewController : UIViewController {
     //MARK: - Properties
     private let shared = Singleton.shared
     
+    private var datas = DataProvider.getMerchandises()
+    
     private let tableView = UITableView()
+    
+    
     
     //MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        setNavigation()
         setUI()
         setConstraint()
         
@@ -29,18 +33,24 @@ class ShoppingListViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = .black
-        setNavigation()
     }
     
     //MARK: - func
     private func setNavigation() {
         navigationItem.title = "장바구니"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        
+        let orderBarButton = UIBarButtonItem(title: "주문", style: .done, target: self, action: #selector(orderButtonTap))
+        orderBarButton.tag = 0
+        navigationItem.rightBarButtonItem = orderBarButton
+    }
+    
+    @objc func orderButtonTap() {
+        
     }
     
     private func setUI() {
         view.backgroundColor = .black
-        
         tableView.dataSource = self
         tableView.rowHeight = 100
         view.addSubview(tableView)
@@ -62,13 +72,22 @@ class ShoppingListViewController : UIViewController {
 
 extension ShoppingListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+     10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell : UITableViewCell
         
-        return UITableViewCell()
+        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: "cell") {
+            cell = reusableCell
+            
+        } else {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+            
+        }
+        cell.imageView?.image = UIImage(systemName: "xmark")
+        cell.textLabel?.text = datas[indexPath.section].merchandises[indexPath.section].name
+        return cell
     }
-    
-    
 }
