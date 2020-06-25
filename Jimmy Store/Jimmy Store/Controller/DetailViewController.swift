@@ -11,6 +11,8 @@ import UIKit
 final class DetailViewController : UIViewController {
     
 //MARK: - Properties
+    private let shared = Singleton.shared
+    
     var productName = ""
     var titleName = ""
     var price = ""

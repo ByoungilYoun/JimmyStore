@@ -22,9 +22,11 @@ class MainTabBarController : UITabBarController {
     searchVC.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass") , tag: 0)
     
     let listVC = ShoppingListViewController()
-    listVC.tabBarItem = UITabBarItem(title: "장바구니", image: UIImage(systemName: "bag"), tag: 0)
+    let listNaviVC = UINavigationController(rootViewController: listVC)
+    listNaviVC.navigationItem.title = "장바구니"
+    listNaviVC.tabBarItem = UITabBarItem(title: "장바구니", image: UIImage(systemName: "bag"), tag: 0)
     
-    viewControllers = [homeVC, searchVC, listVC]
+    viewControllers = [homeVC, searchVC, listNaviVC]
     
   }
 }
