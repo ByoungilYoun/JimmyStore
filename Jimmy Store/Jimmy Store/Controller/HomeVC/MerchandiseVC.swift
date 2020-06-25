@@ -58,20 +58,32 @@ final class MerchandiseVC: UICollectionViewController, UICollectionViewDelegateF
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
         let data = self.datas[indexPath.section].merchandises[indexPath.item]
-        //cell.configure(image: UIImage(named: data.imageName))
-        cell.configure(image: UIImage(systemName: "xmark"), title: data.name, price: data.price)
+        
+        var img: UIImage?
+        
+        if data.imageName.isEmpty {
+            img = UIImage(systemName: "xmark")
+        } else {
+            img = UIImage(named: data.imageName)
+        }
+        
+        cell.configure(image: img,
+                       title: data.name,
+                       price: data.price)
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let data = datas[indexPath.section].merchandises[indexPath.item]
-        let detailVC = DetailViewController()
+        let category = datas[indexPath.section]
+        let data = category.merchandises[indexPath.item]
+//        let detailVC = DetailViewController()
+        let detailVC = DetailViewController(merchandise: data)
     
-        detailVC.productName = datas[indexPath.section].name
-        detailVC.titleName = data.name
-        detailVC.price = String(data.price)
-        detailVC.descriptions = data.description1
+//        detailVC.productName = datas[indexPath.section].name
+//        detailVC.titleName = data.name
+//        detailVC.price = String(data.price)
+//        detailVC.descriptions = data.description1
         super.parent?.navigationController?.pushViewController(detailVC, animated: true)
     }
     

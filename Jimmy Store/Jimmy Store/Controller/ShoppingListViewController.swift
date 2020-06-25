@@ -11,10 +11,6 @@ import UIKit
 class ShoppingListViewController : UIViewController {
     
     //MARK: - Properties
-    private let shared = Singleton.shared
-    
-    private var datas = DataProvider.getMerchandises()
-    
     private let tableView = UITableView()
     
     
@@ -71,12 +67,9 @@ class ShoppingListViewController : UIViewController {
 //MARK: - extension
 
 extension ShoppingListViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     10
-    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { Singleton.shared.count  }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell : UITableViewCell
         
         if let reusableCell = tableView.dequeueReusableCell(withIdentifier: "cell") {
@@ -86,8 +79,23 @@ extension ShoppingListViewController : UITableViewDataSource {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             
         }
-        cell.imageView?.image = UIImage(systemName: "xmark")
-        cell.textLabel?.text = datas[indexPath.section].merchandises[indexPath.section].name
+        
+        if let data = Singleton.shared.getItem(idx: indexPath.row) {
+            
+            var img: UIImage?
+            
+            if data.imageName.isEmpty {
+                img = UIImage(systemName: "xmark")
+            } else {
+                img = UIImage(named: data.imageName)
+            }
+            
+            cell.imageView?.image = img
+            cell.textLabel?.text = data.name
+        }
+        
+        
+        
         return cell
     }
 }
