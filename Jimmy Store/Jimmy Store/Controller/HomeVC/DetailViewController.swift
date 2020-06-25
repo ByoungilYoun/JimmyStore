@@ -139,9 +139,8 @@ final class DetailViewController : UIViewController {
     private func bucketAlertAction() {
         let alert = UIAlertController(title: "장바구니에 상품이 담겼습니다", message: "장바구니로 이동하시겠습니까?", preferredStyle: .actionSheet)
         let okAlert = UIAlertAction(title: "확인", style: .default) { _ in
-//           let shoppingVC = ShoppingListViewController()
-//           super.navigationController?.pushViewController(shoppingVC, animated: true)
-            super.tabBarController?.selectedIndex = 2
+           let shoppingVC = ShoppingListViewController()
+           super.navigationController?.pushViewController(shoppingVC, animated: true)
         }
         let cancelAlert = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(okAlert)
