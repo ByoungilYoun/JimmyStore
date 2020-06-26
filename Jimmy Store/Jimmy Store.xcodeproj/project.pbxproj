@@ -24,6 +24,7 @@
 		A12BE65524A08BD40043C100 /* MerchandiseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */; };
 		A12BE65824A096FD0043C100 /* MerchandiseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65724A096FD0043C100 /* MerchandiseVC.swift */; };
 		A12BE65A24A097420043C100 /* AdvertisementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BE65924A097420043C100 /* AdvertisementVC.swift */; };
+		A1FE2FE124A523A000CCC85F /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE2FE024A523A000CCC85F /* LaunchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A12BE65224A08BD40043C100 /* MerchandiseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchandiseCategory.swift; sourceTree = "<group>"; };
 		A12BE65724A096FD0043C100 /* MerchandiseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseVC.swift; sourceTree = "<group>"; };
 		A12BE65924A097420043C100 /* AdvertisementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementVC.swift; sourceTree = "<group>"; };
+		A1FE2FE024A523A000CCC85F /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0F06110524A0A07E00E43C8F /* CustomCell.swift */,
+				A1FE2FE024A523A000CCC85F /* LaunchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC5838124A4C552002B0AB0 /* SearchViewController.swift in Sources */,
+				A1FE2FE124A523A000CCC85F /* LaunchView.swift in Sources */,
 				A12BE65324A08BD40043C100 /* DataProvider.swift in Sources */,
 				0FBFF28F249D338500C52F20 /* AppDelegate.swift in Sources */,
 				A12744D224A0A801009BA038 /* AdvertisementItemVC.swift in Sources */,

@@ -16,8 +16,11 @@ final class AdvertisementVC: UIPageViewController {
         let adv1 = AdvertisementItemVC(advImageName: "adv1")
         self.advPages.append(adv1)
         
-        let adv2 = AdvertisementItemVC(advImageName: "adv1")
+        let adv2 = AdvertisementItemVC(advImageName: "adv2")
         self.advPages.append(adv2)
+        
+        let adv3 = AdvertisementItemVC(advImageName: "adv3")
+        self.advPages.append(adv3)
 
         super.dataSource = self
         super.setViewControllers([adv1], direction: .forward, animated: true)

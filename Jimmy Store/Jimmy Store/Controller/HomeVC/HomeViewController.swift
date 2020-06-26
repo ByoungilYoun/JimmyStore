@@ -40,7 +40,7 @@ class HomeViewController : UIViewController {
                 adv.topAnchor.constraint(equalTo: guide.topAnchor),
                 adv.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
                 adv.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-                adv.heightAnchor.constraint(equalToConstant: 230),
+                adv.heightAnchor.constraint(equalToConstant: 200),
             ])
             
             super.addChild(self.merchandiseVC)
@@ -55,6 +55,4 @@ class HomeViewController : UIViewController {
             ])
         }
     }
-    
-    
 }

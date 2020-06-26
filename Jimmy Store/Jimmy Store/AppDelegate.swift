@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
+//    window = UIWindow(frame: UIScreen.main.bounds)
     window = UIWindow(frame: UIScreen.main.bounds)
     
   
@@ -25,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    window?.backgroundColor = .white
     window?.makeKeyAndVisible()
     
-    sleep(1)
+    let launchView = LaunchView(frame: navVC.view.bounds)
+    navVC.view.addSubview(launchView)
+    
+//    sleep(1)
     
     return true
   }
-
-
 }
-
