@@ -9,8 +9,10 @@
 import UIKit
 
 final class CustomCell : UICollectionViewCell {
-    static let identifier = "CustomCell"
     
+    //MARK: - Properties
+    
+    static let identifier = "CustomCell"
     private let imageView = UIImageView()
     private let nameLabel = UILabel()
     private let priceLabel = UILabel()
@@ -19,12 +21,16 @@ final class CustomCell : UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - init()
+    
     override init(frame: CGRect) {
         super.init(frame : frame)
         
         setUpViews()
         setUpConstraints()
     }
+    
+    //MARK: - func setUpViews()
     
     private func setUpViews() {
         clipsToBounds = true // 겹치지 않게
@@ -34,17 +40,18 @@ final class CustomCell : UICollectionViewCell {
         contentView.addSubview(imageView)
         
         nameLabel.textAlignment = .left
-        nameLabel.textColor = .white
+        nameLabel.textColor = .black
         nameLabel.font = UIFont.boldSystemFont(ofSize: 10)
         nameLabel.sizeToFit()
         nameLabel.numberOfLines = 0
         contentView.addSubview(nameLabel)
         
         priceLabel.textAlignment = .left
-        priceLabel.textColor = .white
+        priceLabel.textColor = .black
         priceLabel.font = UIFont.boldSystemFont(ofSize: 10)
         contentView.addSubview(priceLabel)
     }
+    //MARK: - setUpConstraints()
     
     private func setUpConstraints() {
         [imageView, nameLabel, priceLabel].forEach {

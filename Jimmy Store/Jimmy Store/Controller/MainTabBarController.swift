@@ -17,7 +17,7 @@ class MainTabBarController : UITabBarController {
     super.view.backgroundColor = .white
     super.delegate = self
 
-    tabBar.barTintColor = UIColor(red: 22 / 255, green: 22 / 255, blue: 22 / 255, alpha: 1.0)
+    tabBar.barTintColor = UIColor.white
     
     let homeVC = HomeViewController()
     homeVC.tabBarItem = UITabBarItem(title: "쇼핑하기", image: UIImage(systemName: "tv"), tag: 0)

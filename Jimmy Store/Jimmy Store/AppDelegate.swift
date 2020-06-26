@@ -17,10 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     window = UIWindow(frame: UIScreen.main.bounds)
     
-    window?.backgroundColor = .white
+  
     let navVC = UINavigationController(rootViewController: MainTabBarController())
+   
     window?.rootViewController = navVC
     window?.backgroundColor = .systemBackground
+//    window?.backgroundColor = .white
     window?.makeKeyAndVisible()
     
     sleep(1)

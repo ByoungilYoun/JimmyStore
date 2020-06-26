@@ -36,7 +36,7 @@ class SearchViewController : UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let collView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-//        collView.backgroundColor = .white
+        collView.backgroundColor = .white
         collView.dataSource = self
         collView.delegate = self
         collView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.identifier)
@@ -54,7 +54,10 @@ class SearchViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationController?.navigationItem.title = "검색"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
+        
         super.view.addSubview(self.searchBar)
         self.searchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -83,6 +86,7 @@ class SearchViewController : UIViewController {
     }
 }
 
+//MARK: - extension
 extension SearchViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int { self.filteredDatas?.count ?? 0 }
     

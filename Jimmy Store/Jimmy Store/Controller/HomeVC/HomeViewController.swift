@@ -16,14 +16,14 @@ class HomeViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Jimmy Store"
         self.setUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-//        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.barStyle = .black
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+////        navigationController?.navigationBar.isHidden = true
+////        navigationController?.navigationBar.barStyle = .black
+//    }
     
     // MARK:- UI
     private func setUI() {

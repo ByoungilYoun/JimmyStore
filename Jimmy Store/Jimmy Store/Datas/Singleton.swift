@@ -11,7 +11,7 @@ import Foundation
 final class Singleton {
     static let shared = Singleton()
     
-    private var shoppingList = [Merchandise]()
+    var shoppingList = [Merchandise]()
     
     var count: Int { self.shoppingList.count }
     

@@ -14,7 +14,8 @@ final class DetailViewController : UIViewController {
 //MARK: - Properties
     var productName = ""
     var titleName = ""
-    var price = ""
+    var price = 0
+    var realPrice = ""
     var descriptions = ""
     var data: Merchandise!
     private var datas = DataProvider.getMerchandises()
@@ -39,7 +40,7 @@ final class DetailViewController : UIViewController {
         
         self.productName = merchandise.categoryName
         self.titleName = merchandise.name
-        self.price = String(merchandise.price)
+        self.price = (merchandise.price)
         self.descriptions = merchandise.description1
         
         self.data = merchandise
@@ -51,6 +52,7 @@ final class DetailViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        realPrice = limitDigits(to: price)
         setNavigation()
         setUI()
         setConstraint()
@@ -62,8 +64,17 @@ final class DetailViewController : UIViewController {
     }
 
 //MARK: - setUI()
+    
+    func limitDigits (to numString : Int) -> String {
+        let number = numString
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: number as NSNumber) ?? "0"
+    }
+    
     private func setUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         
         var img: UIImage?
         
@@ -78,13 +89,12 @@ final class DetailViewController : UIViewController {
         view.addSubview(imageView)
         
         titleLabel.text = titleName
-        titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        titleLabel.textColor = .white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        titleLabel.textColor = .black
         view.addSubview(titleLabel)
         
-        priceLabel.text = price + "원 부터"
+        priceLabel.text = realPrice + "원 부터"
         priceLabel.textAlignment = .center
         priceLabel.font = UIFont.boldSystemFont(ofSize: 20)
         priceLabel.textColor = .systemBlue
@@ -93,13 +103,13 @@ final class DetailViewController : UIViewController {
         describeLabel.text = descriptions
         describeLabel.textAlignment = .left
         describeLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        describeLabel.textColor = .white
+        describeLabel.textColor = .black
+        describeLabel.numberOfLines = 0
         view.addSubview(describeLabel)
         
-        view.addSubview(containerView)
-        containerView.backgroundColor = .green
+//        view.addSubview(containerView)
         
-        bucketButton.setTitle("장바구니", for: .normal)
+        bucketButton.setTitle("장바구니 담기", for: .normal)
         bucketButton.setTitleColor(UIColor.systemBlue, for: .normal)
         bucketButton.backgroundColor = UIColor(red: 255/255, green: 246/255, blue: 133/255, alpha: 1.0)
         bucketButton.addTarget(self, action: #selector(bucketButtonTap), for: .touchUpInside)
@@ -125,36 +135,38 @@ final class DetailViewController : UIViewController {
         titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: guide.widthAnchor).isActive = true
-
+        titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
         priceLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         priceLabel.widthAnchor.constraint(equalTo: guide.widthAnchor).isActive = true
-        priceLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        priceLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         describeLabel.translatesAutoresizingMaskIntoConstraints = false
-        describeLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 20).isActive = true
-        describeLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
-        describeLabel.widthAnchor.constraint(equalTo: guide.widthAnchor).isActive = true
+        describeLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10).isActive = true
+        describeLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10).isActive = true
+        describeLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+        describeLabel.heightAnchor.constraint(equalToConstant: 240).isActive = true
         
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.topAnchor.constraint(equalTo: describeLabel.bottomAnchor, constant: 200).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+//        containerView.translatesAutoresizingMaskIntoConstraints = false
+//        containerView.topAnchor.constraint(equalTo: describeLabel.bottomAnchor, constant: 150).isActive = true
+//        containerView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
+//        containerView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
+//        containerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
         
         bucketButton.translatesAutoresizingMaskIntoConstraints = false
-        bucketButton.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        bucketButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
-        bucketButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-        bucketButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.5).isActive = true
+        bucketButton.topAnchor.constraint(equalTo: describeLabel.bottomAnchor, constant: 120).isActive = true
+        bucketButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10).isActive = true
+        bucketButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        bucketButton.widthAnchor.constraint(equalTo: guide.widthAnchor, multiplier: 0.4).isActive = true
         
         orderButton.translatesAutoresizingMaskIntoConstraints = false
-        orderButton.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        orderButton.leadingAnchor.constraint(equalTo: bucketButton.trailingAnchor).isActive = true
-        orderButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-        orderButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.5).isActive = true
+        orderButton.topAnchor.constraint(equalTo: describeLabel.bottomAnchor, constant: 120).isActive = true
+        orderButton.leadingAnchor.constraint(equalTo: bucketButton.trailingAnchor, constant: 10).isActive = true
+        orderButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        orderButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+        orderButton.widthAnchor.constraint(equalTo: guide.widthAnchor, multiplier: 0.4).isActive = true
     }
 //MARK: - @objc func bucketButtonTap
     @objc func bucketButtonTap () {
@@ -183,7 +195,12 @@ final class DetailViewController : UIViewController {
     
     private func orderAlertAction(){
         let alert = UIAlertController(title: "", message: "주문하시겠습니까?", preferredStyle: .actionSheet)
-        let okAlert = UIAlertAction(title: "주문하기", style: .default, handler: nil)
+        let okAlert = UIAlertAction(title: "주문하기", style: .default) { _ in
+            let alert = UIAlertController(title: "", message: "주문완료!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true)
+        }
         let cancelAlert = UIAlertAction(title: "취소", style: .destructive, handler: nil)
         alert.addAction(okAlert)
         alert.addAction(cancelAlert)

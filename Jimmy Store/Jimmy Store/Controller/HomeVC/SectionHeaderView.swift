@@ -57,9 +57,7 @@ final class SectionHeaderView : UICollectionReusableView {
     }
     
     class func dequeueHeaderSupplementaryView(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> SectionHeaderView {
-        collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                        withReuseIdentifier: SectionHeaderView.identifier,
-                                                        for: indexPath) as! SectionHeaderView
+        collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.identifier, for: indexPath) as! SectionHeaderView
     }
 }
 

@@ -2,6 +2,8 @@ import UIKit
 
 final class MerchandiseVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    //MARK: - Properties
+    
     private var datas = DataProvider.getMerchandises()
     
     private let flowlayout: UICollectionViewFlowLayout
@@ -23,23 +25,24 @@ final class MerchandiseVC: UICollectionViewController, UICollectionViewDelegateF
         
         super.init(collectionViewLayout: flowlayout)
         
-        super.collectionView.backgroundColor = .black
+        super.collectionView.backgroundColor = .white
     }
+    
+    //MARK: - viewDidLoad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
     }
     
-    
     required init?(coder: NSCoder) { fatalError() }
     
     
+    //MARK: - func setupCollectionView()
     private func setupCollectionView() {
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.identifier)
         collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.identifier)
 
-//        collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
         view.addSubview(collectionView)
         
@@ -77,13 +80,8 @@ final class MerchandiseVC: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = datas[indexPath.section]
         let data = category.merchandises[indexPath.item]
-//        let detailVC = DetailViewController()
         let detailVC = DetailViewController(merchandise: data)
-    
-//        detailVC.productName = datas[indexPath.section].name
-//        detailVC.titleName = data.name
-//        detailVC.price = String(data.price)
-//        detailVC.descriptions = data.description1
+
         super.parent?.navigationController?.pushViewController(detailVC, animated: true)
     }
     
