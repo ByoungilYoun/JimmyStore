@@ -1,2 +1,2 @@
-# JimmyStore
+# JimmyStore 🧑🏼‍💻
 Second Hackathon
